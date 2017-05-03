@@ -1,25 +1,39 @@
-var frontIF = function(condition) {
-    return function(thenBranch) {
-        return function(elseBranch) {
-            return condition(thenBranch)(elseBranch)
+// this is the crochet operator [M,N](boolean)
+var IF = function(boolean) {
+    return function(x) {
+        return function(y) {
+            return boolean(x)(y)
         }
-    }
-}
-
-var frontTrue = function(thenBranch){
-    return function(elseBranch) {
-        return thenBranch;
     }
 };
 
-var frontFalse = function(thenBranch) {
-    return function(elseBranch) {
-        return elseBranch;
+var _true = function(x){
+    return function(y) {
+        return x;
     }
+};
+
+var _false = function(x) {
+    return function(y) {
+        return y;
+    }
+};
+
+var zero = function(x) {
+    return x;
 }
 
-var test_true = frontIF(frontTrue)(1)(2);
+var one = function(z) {
+    return IF(z)(_false)(zero);
+}
+
+var two = IF(_false)(one)
+
+console.log(one(123));
+
+var test_true = IF(_true)(1)(2);
 console.log(test_true);
 
-var test_false = frontIF(frontFalse)(1)(2);
+var test_false = IF(_false)(1)(2);
 console.log(test_false);
+
