@@ -43,7 +43,27 @@ namespace Puzzles.SomeAlgos
 
         public bool AreAnagrams(string word1, string word2)
         {
-            return false;
+            return this.AllPermutations(word1).Any(currentWord => currentWord == word2);
+        }
+
+        public List<string> GetOnlyAnagrams(List<string> words)
+        {
+            var result = new HashSet<string>();
+
+            var length = words.Count;
+
+            for (var i = 0; i < length - 1; ++i)
+            {
+                for (var j = i + 1; j < length; ++j)
+                {
+                    if (this.AreAnagrams(words[i], words[j]))
+                    {
+                        result.Add(words[i]);
+                    }
+                }
+            }
+
+            return result.ToList();
         }
     }
 }

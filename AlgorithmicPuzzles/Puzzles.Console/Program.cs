@@ -19,6 +19,13 @@ namespace Puzzles.Console
                 System.Console.WriteLine(word);
             }
 
+            System.Console.WriteLine();
+
+            foreach (var word in new StringAlgorithms().GetOnlyAnagrams(new List<string>() { "123", "451", "1021", "321", "aim", "mia", "154", "toto" }))
+            {
+                System.Console.WriteLine(word);
+            }
+
             System.Console.ReadLine();
         }
     }
