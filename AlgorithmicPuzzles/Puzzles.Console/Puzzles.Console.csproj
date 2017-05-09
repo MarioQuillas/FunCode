@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Puzzles.SomeAlgos\Puzzles.SomeAlgos.csproj">
+      <Project>{a5bcec30-5681-428c-99bd-f10d9009e514}</Project>
+      <Name>Puzzles.SomeAlgos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
