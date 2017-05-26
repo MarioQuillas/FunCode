@@ -1,8 +1,4 @@
-﻿let rnd = new System.Random()
-
-
-
-let rec allPermutations charList = 
+﻿let rec allPermutations charList = 
     seq {
         match charList with
         | [] -> yield ""
