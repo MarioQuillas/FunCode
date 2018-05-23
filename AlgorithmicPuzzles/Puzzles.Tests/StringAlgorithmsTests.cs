@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Puzzles.SomeAlgos;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Puzzles.Tests
+﻿namespace Puzzles.Tests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using SomeAlgos;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class StringAlgorithmsTests
     {
